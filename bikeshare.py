@@ -175,7 +175,8 @@ def trip_duration_stats(df):
 
     # TO DO: display total travel time
 
-    #I create day, hour, minute, and second variables for 'total time' 
+    #I create day, hour, minute, and second variables for 'total time'
+    
     total_time = df['Trip Duration'].sum()
     days = total_time // (24 * 3600)
     remainder_time = total_time % (24 * 3600)
@@ -189,6 +190,7 @@ def trip_duration_stats(df):
     # TO DO: display mean travel time
     
     #I create day, hour, minute, and second variables for 'mean time' 
+
     mean_time = df['Trip Duration'].mean()
     days = mean_time // (24 * 3600)
     remainder_time = mean_time % (24 * 3600)
@@ -197,7 +199,9 @@ def trip_duration_stats(df):
     minutes = remainder_time // 60
     remainder_time %= 60
     seconds = remainder_time
+
     #I omit days since no user rode for a day
+
     print('Bikeshare users rode an average of {} hours {} minutes {} seconds per trip'.format(hours, minutes, seconds))
 
 
