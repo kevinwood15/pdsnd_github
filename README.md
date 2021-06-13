@@ -13,5 +13,6 @@ In this project, you will write Python code to import US bike share data and ans
 This project uses three .csv data files: chicago.csv, new_york_city.csv, and washington.csv
 
 ### Credits
-
+I thank my first Chris Daigle for recommending this Udacity course for data science and
+my employer for funding the course.
 
