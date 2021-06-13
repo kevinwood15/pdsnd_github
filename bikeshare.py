@@ -22,6 +22,7 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
+ 
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
 
     city_list=["chicago", "new york city", "washington"]
@@ -180,29 +181,28 @@ def trip_duration_stats(df):
 
     # TO DO: display total travel time
 
-    #I create day, hour, minute, and second variables for 'total time' 
+    #I create day, hour, minute, and second variables for 'total time'
+    
     total_time = df['Trip Duration'].sum()
     days = total_time // (24 * 3600)
-    remainder_time = total_time % (24 * 3600)
-    hours = remainder_time // 3600
-    remainder_time %= 3600
-    minutes = remainder_time // 60
-    remainder_time %= 60
-    seconds = remainder_time
+    hours = (total_time % (24 * 3600)) // 3600
+    minutes = ((total_time % (24 * 3600)) % 3600) // 60
+    seconds = (((total_time % (24 * 3600)) % 3600) % 60)
+    
     print('Bikeshare users rode for a total of {} days {} hours {} minutes {} seconds'.format(days, hours, minutes, seconds))
 
     # TO DO: display mean travel time
     
     #I create day, hour, minute, and second variables for 'mean time' 
+
     mean_time = df['Trip Duration'].mean()
     days = mean_time // (24 * 3600)
-    remainder_time = mean_time % (24 * 3600)
-    hours = remainder_time // 3600
-    remainder_time %= 3600
-    minutes = remainder_time // 60
-    remainder_time %= 60
-    seconds = remainder_time
+    hours = (mean_time % (24 * 3600)) // 3600
+    minutes = ((mean_time % (24 * 3600)) % 3600) // 60
+    seconds = (((mean_time % (24 * 3600)) % 3600) % 60)
+
     #I omit days since no user rode for a day
+
     print('Bikeshare users rode an average of {} hours {} minutes {} seconds per trip'.format(hours, minutes, seconds))
 
 
